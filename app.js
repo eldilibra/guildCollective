@@ -10,7 +10,7 @@ var express = require('express')
 var app = express();
 var landing = require('./lib/landing');
 var home = require('./lib/home');
-var users = require('./lib/users');
+var artists = require('./lib/artists');
 var pieces = require('./lib/pieces');
 
 app.configure(function(){
@@ -24,7 +24,7 @@ app.configure(function(){
   app.use(app.router);
   app.use(landing);
   app.use(home);
-  app.use(users);
+  app.use(artists);
   app.use(pieces);
   app.use(express.static(path.join(__dirname, 'public')));
 });
