@@ -8,12 +8,13 @@ a {
 body {
   font-family: Helvetica, Sans-serif
 }
+
 label {
   float: left;
   text-align: right;
   margin-top: 10px;
   margin-right: 15px;
-  width: 100px;
+  width: 140px;
 }
 
 input {
@@ -27,22 +28,16 @@ form {
 
 .wrapper {
   position: absolute;
-  width: 300px;
+  width: 340px;
   left: 50%;
-  margin-left: -150px;
+  margin-left: -170px;
   text-align: center;
 }
-/*
-.instruction {
-  position: absolute;
-  left: 50%;
-  margin-left: 
-}
-*/
+
 .submit {
   background-color: #ddd;
   position: absolute;
-  left: 115px;
+  left: 155px;
   margin-top: 10px;
   padding-top: 1px;
   width: 148px;
