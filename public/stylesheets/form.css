@@ -21,13 +21,24 @@ input {
   width: 150px;
 }
 
+form {
+  text-align: left;
+}
+
 .wrapper {
   position: absolute;
   width: 300px;
   left: 50%;
   margin-left: -150px;
+  text-align: center;
 }
-
+/*
+.instruction {
+  position: absolute;
+  left: 50%;
+  margin-left: 
+}
+*/
 .submit {
   background-color: #ddd;
   position: absolute;
