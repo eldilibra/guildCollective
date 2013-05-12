@@ -13,6 +13,8 @@ var home = require('./lib/home');
 var artists = require('./lib/artists');
 var pieces = require('./lib/pieces');
 
+var HALF_HOUR = 1000 * 60 * 30;
+
 app.configure(function(){
   app.set('port', process.env.PORT || 3000);
   app.use(express.favicon());
@@ -20,7 +22,7 @@ app.configure(function(){
   app.use(express.bodyParser());
   app.use(express.methodOverride());
   app.use(express.cookieParser('vulfgong'));
-  app.use(express.session());
+  app.use(express.session({ secret: '18moboglobiobe19', cookie: { maxAge: HALF_HOUR }}));
   app.use(app.router);
   app.use(landing);
   app.use(home);
