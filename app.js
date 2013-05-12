@@ -42,9 +42,9 @@ app.configure('development', function(){
 //  next();
 //});
 
-app.get('/', function (req, res) {
-  res.redirect('/landing');
-});
+//app.get('/', function (req, res) {
+//  res.redirect('/landing');
+//});
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));
