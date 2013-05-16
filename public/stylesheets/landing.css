@@ -35,3 +35,8 @@ body {
 .login:active {
   background-color: #3ab2e2;
 }
+
+.twitter-bird {
+  margin-bottom: -10px;
+  margin-left: 5px;
+}
