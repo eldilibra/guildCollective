@@ -80,7 +80,9 @@ a {
 
 .artist-tag-large .artist-img {
   height: auto;
-  width: 120px;
+  width: auto;
+  max-width: 120px;
+  max-height: 120px;
   -webkit-box-shadow: 0 0 10px #000;
   box-shadow: 0 0 10px #000;
 }
