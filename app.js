@@ -8,8 +8,8 @@ var express = require('express')
   , path = require('path');
 
 var app = express();
-var landing = require('./lib/landing');
-var home = require('./lib/home');
+//var landing = require('./lib/landing');
+//var home = require('./lib/home');
 var artists = require('./lib/artists');
 var pieces = require('./lib/pieces');
 
@@ -24,8 +24,8 @@ app.configure(function(){
   app.use(express.cookieParser('vulfgong'));
   app.use(express.session({ secret: '18moboglobiobe19', cookie: { maxAge: HALF_HOUR }}));
   app.use(app.router);
-  app.use(landing);
-  app.use(home);
+  //app.use(landing);
+  //app.use(home);
   app.use(artists);
   app.use(pieces);
   app.use(express.static(path.join(__dirname, 'public')));
