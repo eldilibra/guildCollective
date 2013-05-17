@@ -30,7 +30,6 @@ function swipeView(theParent) {
     function checkParentHeight () {
       var parent = root.parentNode;
       var ratio = .666;
-      console.log(window.orientation);
       if (window.orientation === 90 || window.orientation === -90) {
         ratio = .333;
       }
