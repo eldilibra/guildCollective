@@ -71,11 +71,22 @@ a {
   margin-left: 10px;
 }
 
+.artist-img-large {
+  height: 120px;
+  width: 120px;
+  margin-bottom: -60px;
+  position: relative;
+  z-index: 1;
+  -webkit-box-shadow: 0 0 10px #000;
+  box-shadow: 0 0 10px #000;
+}
+
 .artist-name {
   font: 800 12px/50px sans-serif;
   color: #888;
   text-shadow: 0 1px 2px #000;
   display: block;
+  float: right;
   white-space: nowrap;
 }
 
@@ -131,6 +142,18 @@ a {
   margin-bottom: -1px;
 }
 
+.artist-title {
+  padding-top: 20px;
+}
+
+.artist-guild {
+  
+}
+
+.artist-bio {
+  
+}
+
 .footer {
 }
 
@@ -164,7 +187,6 @@ a {
 
 .flag {
   display:table;
-  width:100%;
   border-top: 1px solid rgba(0,0,0,.1);
   padding-right: 80px;
   background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAABGCAYAAAC+ANZHAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpCM0JCQjE3OUI2QkUxMUUyOTcxQTlCQkM5MEE2NTFDMSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpCM0JCQjE3QUI2QkUxMUUyOTcxQTlCQkM5MEE2NTFDMSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkIzQkJCMTc3QjZCRTExRTI5NzFBOUJCQzkwQTY1MUMxIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkIzQkJCMTc4QjZCRTExRTI5NzFBOUJCQzkwQTY1MUMxIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+iXnGFwAAAs5JREFUeNrs2ltT00AUB/ATQZ2CKFLU4njF+w2e1Ge/POBX8N0RmgbE0rRVIJ6d+WcmxtLsKTknOww7839gaNpfNnvLJlGWZRRyuUKBl+CBF6JEIV/iO5wvnMWmgHMVuI+c65w1TpfzOxTgKudT4f/znPucmDNuGljGUQnZs0SWEW3O5yk1OwdkwhlZA6twxWNcm9znDC17cccDl5erOJm2ZQ3G6LHLgpNzl/snJ7Vqg110hhUh8pAzsOrFMX7Y9/JFQPY5R1bjYK8w5Pgi1wA8sgAShpJTzCgS5AC1qQ4kDCXHnLsCZAfDzy8LoCsHmIPvCZFjdB51IGEoGQHpu/xyn/2DY9WBhNpIUTu+SNc0TnAV1IGEdjUQIl0ny9Ce1YGEHtoXIlfx2cQCSBjr+hhWfJFt/F7PApgjD4H0vTtcwUIjtgAS2uMBpjpf5G0sSroWQELPToRIt2Jq+SDrABJmjgSX2/c7b3EWOHsWQMJA3kNN+n7vTdzS7loAc2QsrEmHXAIy0wYS5uAukPOexywB+h9SA0hYXOwJkTfQef5BagGLyA7GPp+yiGHoR47UBBJWM7tC5AJmHYc81QYWkQ8EFdLCMPTdagPzIeea8KS+Edns/b3ivBTivuZrSG3ga84LIW6nuAqPQsZpAmfBbU+6ydIAvuE8rwOnAawVVzfwLeeZcKbZqbp3jhrEbfvsPtQBfMdZ18DVAVTFnReojjsP8D3nqTZuVqAUNwZupj1DKfAD54kVTgo0x0mAG5zHQtwW1bBfHSngRqi5WjbTq4CbnEdN4aqAjePOAka4rFKca3O1P22KJvy9iZucxnFlYHA4Km1LbAhxQ7Q5NZwrxfvihCbsLk3BbWnjylsfvo8YclxKBqW8FdGvQJri6Iy9kvy5b/kRQ4o2Z4ajKZs55Yc1KWpuSIEVV4vu1agWBVwuX+GbOpNcviJ60YF/BRgAVubB0cFhQVsAAAAASUVORK5CYII=);
@@ -174,7 +196,7 @@ a {
 }
 
 .flag:active {
-  background-color: #eaeffa;
+  background-color: #eaecef;
 }
 
 .flag-image,
@@ -226,6 +248,7 @@ a {
   position: relative;
   margin: auto;
   background: #111;
+  margin-top: -20px;
 }
 
 .leaf
@@ -300,7 +323,7 @@ a {
   z-index: 2;
   display: block;
   bottom: 0;
-  width: 40px;
+  width: 60px;
   height: 40px;
   background-position: center;
   background-repeat: no-repeat;
