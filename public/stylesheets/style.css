@@ -115,6 +115,9 @@ a {
   display: block;
   float: right;
   white-space: nowrap;
+  max-width: 43%;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .artist-name-all {
@@ -317,6 +320,10 @@ a {
   .artist-bio,
   .piece-description p {
     font-size: 20px;
+  }
+  
+  .artist-name {
+    max-width: 70%;
   }
 }
 
