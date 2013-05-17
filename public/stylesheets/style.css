@@ -77,6 +77,10 @@ a {
   float: right;
 }
 
+.artist-tag.artist-tag-link:active {
+  opacity: .5;
+}
+
 .artist-tag-large {
   position: absolute;
   z-index: 1;
@@ -106,7 +110,7 @@ a {
 
 .artist-name {
   font: 800 12px/50px sans-serif;
-  color: #888;
+  color: #79a;
   text-shadow: 0 1px 2px #000;
   display: block;
   float: right;
@@ -137,6 +141,7 @@ a {
   padding-bottom: 20px;
 }
 
+.artist-guild,
 .piece-meta {
   padding-bottom: 20px;
   border-bottom: 1px solid rgba(0,0,0,.1);
@@ -158,6 +163,7 @@ a {
   
 }
 
+.artist-bio,
 .piece-description p {
   margin: 0;
   padding: 20px 0;
@@ -196,6 +202,7 @@ a {
 }
 
 .footer {
+  border-top: 3px solid #000;
   max-width: 570px;
   margin: auto;
 }
@@ -294,10 +301,23 @@ a {
 }
 
 
+@media (orientation:landscape) {
 
-
-
-
+  .piece-title {
+    font-size: 24px;
+  }
+  
+  .artist-guild,
+  .piece-meta {
+    font-size: 11px;
+    letter-spacing: 4px;
+  }
+  
+  .artist-bio,
+  .piece-description p {
+    font-size: 20px;
+  }
+}
 
 
 
