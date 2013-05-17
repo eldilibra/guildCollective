@@ -173,7 +173,7 @@ a {
   line-height: 1.4em;
 }
 
-.artist-bio:empty
+.artist-bio:empty,
 .piece-description p:empty {
   padding: 0;
   margin-bottom: -1px;
