@@ -123,6 +123,7 @@ a {
 
 .artist-name-all {
   margin-right: 20px;
+  max-width: none;
 }
 
 .piece-title {
