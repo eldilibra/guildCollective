@@ -97,7 +97,7 @@ a {
   margin-left: 20px;
   height: 50px;
   width: auto;
-  background: #fff;
+  background: rgba(255,255,255,.99);
 }
 
 .artist-tag-large .artist-img {
