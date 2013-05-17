@@ -196,3 +196,191 @@ a {
   font-weight: 600;
   padding: 10px 0;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.swipeview
+{
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  position: relative;
+  margin: auto;
+  background: #111;
+}
+
+.leaf
+{
+  min-height: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  position: relative;
+}
+
+#root
+{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 40px;
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translate3d(0,0,0);
+  -webkit-transform-style: preserve-3d;
+}
+
+.sv-footer
+{
+  list-style: none;
+  width: 100%;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  height: 40px;
+  bottom: 0;
+  z-index: 1;
+}
+
+.sv-footer li
+{
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  background-color: #999;
+  background-color: #fff;
+  margin: 18px 5px;
+  opacity: .2;
+  -webkit-transition: all .5s ease;
+}
+
+.sv-footer .currentLeaf
+{
+  -webkit-box-shadow: 0 0 5px 2px #fff, 0 0 10px #fff;
+  opacity: 1;
+  -webkit-transition: none;
+}
+
+.sv-footer.hasCurrent .currentLeaf
+{
+  -webkit-box-shadow: 0 0 0 #fff;
+  opacity: 1;
+  -webkit-transition: all .2s ease;
+}
+
+.control
+{
+  position: absolute;
+  z-index: 2;
+  display: block;
+  bottom: 0;
+  width: 40px;
+  height: 40px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 9px 14px;
+}
+
+.control:active
+{
+  opacity: .3;
+}
+
+.control.prevbutton
+{
+  left: 0;
+  background-position: 47% 50%;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAgCAYAAAAWl4iLAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDoyMkE3OUM0MEI2NzIxMUUyOEUzN0YxMjE1NzIxMEZCNiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDoyMkE3OUM0MUI2NzIxMUUyOEUzN0YxMjE1NzIxMEZCNiI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjIyQTc5QzNFQjY3MjExRTI4RTM3RjEyMTU3MjEwRkI2IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjIyQTc5QzNGQjY3MjExRTI4RTM3RjEyMTU3MjEwRkI2Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+4l3QoQAAAWBJREFUeNq0llFqwkAQhpNQWkHpi9VTKL1A8QDiQ809G/tQxGfxAkVv0De1L1KpBOl2Bv4t22iyO2Nc+MFszOc6+//ZiY0x0TXGjfK5R9IT6QHXW9KC9G6/ECtW/EwakXLSHnNN0h3phTTVrDglDbFCBseY/yY1cP+DtEwU0HUBGuHzAfMDnkgU0GMB6sL3tu5JTdCTkdQINdjErQ8shd5C8yqwFMru6pBe2RFlYA20S3qDztZ4rIRyKCZlmzeCNNCszBU9RHVTB9QFD5CaPMCn/Ey7Cuq+K/jXvwKgfP8e9ZxdEhD1sGDesBbqF3nqu4N70hDw3EmOD/5D+oQtUx94hdR0UHfjqfMR/7IU7tbYJqdbB7y4eRPYSAMf+1yRKeE2uZV208A3SG/f52MpPJeceVK46MyTwMWRDoH/O/MkDYt9k51rWAwalr8zT9oJZYh0VYu11PZuV2sKg8avAAMAELuJqISI5oMAAAAASUVORK5CYII=);
+}
+
+.control.nextbutton
+{
+  right: 0;
+  background-position: 53% 50%;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAgCAYAAAAWl4iLAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDoyMkE3OUMzQ0I2NzIxMUUyOEUzN0YxMjE1NzIxMEZCNiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDoyMkE3OUMzREI2NzIxMUUyOEUzN0YxMjE1NzIxMEZCNiI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjgxMzY5N0UxQjY2RjExRTI4RTM3RjEyMTU3MjEwRkI2IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjgxMzY5N0UyQjY2RjExRTI4RTM3RjEyMTU3MjEwRkI2Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+POgxFQAAAVZJREFUeNq0ltFqwjAUhpsiImzsRudTTPYCYw8wvND6np0X4gPIXkC2p9DtZmxMy1j9A3+ghLTJydLChzbiZ5NzfhNV13XWxzWw7u/BA5jw/h28gL1UrBpP/ARW4Ay+OXYFhmAD1jFPPAMF+AAn/YMc/6F4DnJQhopzvj6CypJmfK/HD5xRIRVPOH3lWi7wK5XnobWQyvNG9XWh6lRyI96xSMNUciN+ZTvdslP+LW+u8YZMU8jt4j2DbaR86euKMlI+J53tFiM/ggW48/WxkY8D+t0ktGKKvV8oue43Lam05V+cZXDyxJdPXLDan551zvj5NQvZKS7YRvqv9C9AapK76xIb6YEVVx7pgKnV6X1rE8dIp43kOtd4GSndsnucxTPJiZGWbV0xY2qOKaSuPa9KIQ3d88RSSfJE0tA9Tyx17XkjS24SJZL2esRS1mmzl0Nh0usiwACrDomPqqFH+gAAAABJRU5ErkJggg==);
+}
+
+.control.hide
+{
+  display: none;
+}
+
+.leaf.drag
+{
+  -webkit-transition: none;
+  transition: none;
+}
+
+.leaf
+{
+  position: absolute;
+  width: 100%;
+  overflow: hidden;
+  -webkit-transform-style: preserve-3d;
+  -webkit-transform: translate3d(0,0,0);
+  -webkit-transition: all .3s ease;
+}
+
+.leaf a
+{
+  position: absolute;
+  display: block;
+  top: 0;
+  bottom: 0;
+  left: 17%;
+  right: 17%;
+  z-index: 1;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-drag: none;
+}
+
+.leaf .leafimg
+{
+  position: absolute;
+  display: block;
+  left: 0; right: 0; top: 0; bottom: 0;
+  background-position: 50% 30%;
+  background-size: 100% auto;
+  background-size: cover;
+}
+
+.drag .leaf
+{
+  -webkit-transition: none;
+}
+
+.leaf {display: none;}
+.current, .next, .prev {display: block;}
+.next, .prev {pointer-events: none; opacity: 0;}
+.csstransforms3d .next {-webkit-transform: translate3d(30%,0,0)}
+.csstransforms3d .prev {-webkit-transform: translate3d(-30%,0,0)}
+.csstransforms .next {-webkit-transform: translate3d(30%,0)}
+.csstransforms .prev {-webkit-transform: translate3d(-30%,0)}
+.no-csstransforms3d .prev, .no-csstransforms .prev {left:-30%;}
+.no-csstransforms3d .next, .no-csstransforms .next {left:30%;}
